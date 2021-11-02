@@ -1,0 +1,84 @@
+.form
+
+	&__title
+		font-size: 50px
+		margin-bottom: 40px
+		+med
+		+r(992)
+			font-size: 36px
+		+r(768)
+			font-size: 26px
+
+	&__group
+		margin-bottom: 20px
+		position: relative
+		width: 380px
+		display: block
+		text-align: left
+		&:last-child
+			margin-bottom: 0
+		+r(992)
+			max-width: 100%
+			width: 100%
+		+r(768)
+			min-height: auto
+
+	&__row
+		display: flex
+
+	&__forget
+		margin-bottom: 20px
+
+	.btn
+		height: 64px
+		max-width: 380px
+		width: 100%
+		margin: 0 auto
+		font-size: 20px
+		+med
+
+label
+	+med
+	font-size: 14px
+	margin-bottom: 10px
+	display: block
+
+.passkey-icon
+	position: absolute
+	top: 32px
+	right: 30px
+	transform: translateY(-50%)
+	cursor: pointer
+
+.input
+	max-width: 380px
+	width: 100%
+	border: 3px solid $blck
+	height: 64px
+	line-height: 64px
+	text-indent: 20px
+	padding-right: 20px
+	transform: skew(-15deg)
+	font-size: 18px
+	+r(1200)
+		font-size: 16px
+	+r(992)
+		font-size: 14px
+	+r(768)
+		max-width: 100%
+		width: 100%
+	+reg
+	+placeholder
+		font-size: 18px
+		+reg
+		color: $blck
+		opacity: .6
+		transform: skew(15deg)
+	&.error
+		border-color: $red !important
+	&.valid
+		border-color: #00C851
+
+textarea
+	height: 120px !important
+	max-height: 130px !important

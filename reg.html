@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>REG</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="DMAX-QUEST" />
+    <meta name="keywords" content="DMAX-QUEST" />
+    <meta name="geo.placename" content="Ташкент, Узбекистан">
+    <!-- Информация об авторе -->
+    <link rel="me" href="https://dmaxquest.uz" type="text/html">
+    <link rel="shortlink" href="https://dmaxquest.uz/" />
+    <link rel="canonical" href="https://dmaxquest.uz/" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#fff" />
+    <!-- Open Graph -->
+    <meta name="og:title" content="dmaxquest - DMAX-QUEST">
+    <meta name="og:description" content="DMAX-QUEST">
+    <meta name="og:url" content="https://dmaxquest.uz/">
+    <meta name="og:image" content="https://dmaxquest.uz/img/og.jpg">
+    <meta name="og:site_name" content="DMAX-QUEST - DMAX-QUEST">
+    <meta name="og:locale" content="uz_UZ">
+    <meta name="og:type" content="website">
+    <!-- ios -->
+<!--     <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon//safari-pinned-tab.svg" color="#ffcd79">
+    <meta name="apple-mobile-web-app-title" content="DMAX-QUEST">
+    <meta name="application-name" content="DMAX-QUEST"> -->
+    <!-- style -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link rel="stylesheet" media="all" href="css/style.css" />
+    <style>
+        img{ border: none; }
+        button:focus { outline: none; }
+    </style>
+</head>
+<body>
+
+    <main class="global" data-scroll-container>
+        
+        <!-- reg -->
+        <section class="reg">
+            <div class="fpage">
+
+                <div class="fpage__left fpage__block">
+                    <div class="container">
+                        
+                        <!-- header -->
+                        <header class="fpage__header">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                            <!-- lang -->
+                            <div class="lang">
+                                <a href="#">Uz</a>
+                                <a class="is-active" href="#">RU</a>
+                            </div>
+                            
+                            <a class="fpage__header--back go-home" href="index.html">на главную</a>
+                        </header>
+
+                        <div class="form__title">Регистрация</div>
+
+                        <!-- form -->
+                        <div class="form">
+                            <form id="contact" method="post" enctype="multipart/form-data">
+                                <div class="form__inner">
+                                    <div class="form__left">
+                                        <label for="fileInput">Ваше фото</label>
+                                        <div class="w-32 h-32 mb-1 border rounded-lg overflow-hidden relative bg-gray-100">
+                                            <img id="image" class="object-cover w-full h-32" src="https://im0-tub-ru.yandex.net/i?id=cc67e77e784fcf04018ff099fd10242b&ref=rim&n=33&w=135&h=135">
+                                            <div class="absolute top-0 left-0 right-0 bottom-0 w-full block cursor-pointer flex items-center justify-center" onclick="document.getElementById('fileInput').click()">
+                                                <button type="button" style="background-color: rgba(255, 255, 255, 0.65)" class="hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 text-sm border border-gray-300 rounded-lg shadow-sm">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-camera" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="24" height="24" stroke="none"></rect><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path><circle cx="12" cy="13" r="3"></circle></svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <input name="photo" id="fileInput" accept="image/*" class="required" type="file" onchange="let file = this.files[0];
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            document.getElementById('image').src = e.target.result;
+                                        };
+                                        reader.readAsDataURL(file);
+                                        ">
+                                    </div>
+
+                                    <div class="form__right">
+                                        <div class="form__group">
+                                            <label for="name">Введите имя</label>
+                                            <input id="name" name="name" type="text" class="required input" placeholder="Имя">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="surname">Введите фамилию</label>
+                                            <input id="surname" name="surname" type="text" class="required input" placeholder="Фамилия">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="country">Выберите регион</label>
+                                            <select class="input" name="country">
+                                                <option value="Тошкент">Тошкент</option>
+                                                <option value="Андижон">Андижон</option>
+                                                <option value="Наманган">Наманган</option>
+                                                <option value="Фаргона">Фаргона</option>
+                                                <option value="Қўқон">Қўқон</option>
+                                                <option value="Жиззах">Жиззах</option>
+                                                <option value="Сирдарё">Сирдарё</option>
+                                                <option value="Навоий">Навоий</option>
+                                                <option value="Кашкадарё">Кашкадарё</option>
+                                                <option value="Сурхандарё">Сурхандарё</option>
+                                                <option value="Самарканд">Самарканд</option>
+                                                <option value="Хоразм ">Хоразм </option>
+                                                <option value="Коракалпакистон">Коракалпакистон</option>
+                                                <option value="Бухоро">Бухоро</option>
+                                            </select>
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="tel">Введите номер</label>
+                                            <input id="tel" name="phone" type="tel" class="required input" placeholder="Телефон" inputmode="text">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="password">Придумайте пароль</label>
+                                            <input id="password" name="password" type="password" class="required input" placeholder="Придумайте пароль">
+                                            <a href="#" class="password-eye password-eye-22"></a>
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="confirm">Повторите пароль</label>
+                                            <input id="confirm" name="password_confirmation" type="password" class="required input" placeholder="Повторите пароль">
+                                            <a href="#" class="password-eye password-eye-2"></a>
+                                        </div>
+                                        <div class="form__group form__group-2">
+                                            <input id="checkbox" name="checkbox" type="checkbox" class="required custom-checkbox">
+                                            <label for="checkbox" class="custom-label">Я соглашаюсь с условиями <a target="_blank" href="#">Публичной Оферты</a></label>
+                                        </div>
+                                        <div class="form__group">
+                                            <button class="btn btn-red"><span>Завершить регистрацию</span></button>
+                                        </div>
+                                        <div class="form__group">
+                                            <div class="form__inline">
+                                                <p>Уже есть аккаунт?</p>
+                                                <a class="link link--red" href="login.html">Войти</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- footer -->
+                        <footer class="fpage__footer">
+                            <div class="copy">СП ООО «Самаркандский автомобильный завод». <br> Все права защищены. 2021</div>
+                        </footer>
+
+                    </div>
+                </div>
+
+                <div class="regform-load">
+                    <!-- 5 -->
+                    <div class="regform-loader loader--style5" title="4">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="104px" height="110px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="0" width="4" height="10" fill="#fff">
+                          <animateTransform attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="0" width="4" height="10" fill="#fff">
+                          <animateTransform attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="0" width="4" height="10" fill="#fff">
+                          <animateTransform attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                        </rect>
+                      </svg>
+                    </div>
+                </div>
+
+                <div class="fpage__right"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- js -->
+    <script type="text/javascript" src="js/libs.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

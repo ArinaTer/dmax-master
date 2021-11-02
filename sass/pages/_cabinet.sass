@@ -1,0 +1,1042 @@
+.cabinet
+	.header
+		padding: 30px 0
+		position: relative
+		background-color: $blck
+		+r(992)
+			padding: 20px 0
+			border-bottom: 1px solid rgba($blck, .3)
+		.logo
+			+r(992)
+				max-width: 80px
+		&__active
+			display: flex
+			align-items: center
+			.lang
+				margin: 0 50px
+				+r(996)
+					display: none
+				a
+					color: $w
+					&.is-active
+						color: $red
+		.go-home
+			+r(992)
+				display: none
+
+		.go-exit
+			margin-left: 50px
+			+r(992)
+				display: none
+
+		.notification__btn
+			position: relative
+			margin-left: 15px
+			+r(992)
+				margin-left: 0
+			&.is-active
+				animation: bell 0.7s 0.7s both infinite
+
+		.is-have
+			position: absolute
+			width: 9px
+			height: 9px
+			background-color: $red
+			border-radius: 50%
+
+	@keyframes bell
+		0%
+			transform: rotate(0)
+		10%
+			transform: rotate(30deg)
+		20%
+			transform: rotate(0)
+		80%
+			transform: rotate(0)
+		90%
+			transform: rotate(-30deg)
+		100%
+			transform: rotate(0)
+
+	.header__bottom
+		background-color: $blck
+		justify-content: space-between
+		width: 100%
+		padding: 15px
+		display: none
+		+r(992)
+			display: flex
+		.action
+			display: flex
+			a
+				margin-right: 20px
+
+		.lang
+			a
+				color: $w
+				&.is-active
+					color: $red
+
+	.footer__bottom
+		margin-top: 0
+
+.profile
+	position: relative
+	background-color: $w
+	height: 50px
+	line-height: 50px
+	padding: 0 30px
+	transform: skew(-20deg)
+	margin-left: 65px
+	+r(1024)
+		margin-left: 30px
+	+r(992)
+		padding: 0 15px
+		height: 40px
+		line-height: 40px
+	&-inner
+		display: flex
+		align-items: center
+		transform: skew(20deg)
+	.ava-box
+		width: 40px
+		height: 40px
+		padding: 5px
+	&-logo
+		width: 30px
+		+r(992)
+			width: 20px
+	&-title
+		font-size: 14px
+		text-transform: uppercase
+		margin-left: 10px
+		position: relative
+		top: -2px
+		+bold
+		+r(992)
+			font-size: 12px
+	&-block
+		background-color: $red
+		color: $w
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		top: 80%
+		right: -20px
+		width: 75px
+		height: 35px
+		+r(992)
+			height: 25px
+		img
+			width: 15px
+			height: 15px
+			margin-right: 5px
+		span
+			font-size: 12px
+			+bold
+		img, span
+			transform: skew(20deg)
+
+.content
+	padding: 50px 0
+	+r(768)
+		padding: 30px 0 50px
+
+	.command-logo-box
+		display: flex
+		justify-content: center
+		flex-direction: column
+		align-items: center
+		position: relative
+
+	.logo-delete
+		position: absolute
+		top: -10px
+		right: -10px
+		background-color: #fed7d7
+		color: $red
+		+bold
+		width: 40px
+		height: 40px
+		// padding: 8px
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 14px
+		&:hover
+			svg
+				transform: scale(0.8)
+				-webkit-transition: transform .2s cubic-bezier(0.4, 0.0, 0.2, 1)
+				transition: transform .2s cubic-bezier(0.4, 0.0, 0.2, 1)
+		svg
+			width: 15px
+			fill: $red
+			-webkit-transition: transform .2s cubic-bezier(0.4, 0.0, 0.2, 1)
+			transition: transform .2s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+	.create__name
+		background-color: #ddd
+		padding: 30px
+		display: flex
+		align-items: center
+		+r(768)
+			padding: 20px
+			font-size: 14px
+		svg
+			width: 30px
+			margin-right: 20px
+
+	.create__logo
+		margin-bottom: 30px
+		width: 100%
+
+		h3
+			margin-bottom: 15px !important
+			+bold
+			text-transform: uppercase
+		a
+			+r(768)
+				max-width: 100%
+				width: 100%
+
+	&__header
+		display: flex
+		justify-content: space-between
+		align-items: center
+		+r(992)
+			flex-direction: column
+
+	&__header--info
+		display: flex
+		align-items: center
+		+r(992)
+			flex-direction: column
+
+		.ava-box
+			width: 50px
+			height: 50px
+			+r(992)
+				position: absolute
+				top: 0
+				left: 0
+
+		.command-logo
+			width: 120px
+
+		img
+			margin-bottom: -5px
+			&.add-command
+				width: 100%
+
+	&__title
+		font-size: 40px
+		+bold
+		text-transform: uppercase
+		margin: 0 80px 0 30px
+		+r(992)
+			display: block
+			font-size: 26px
+			margin: 0 0 20px 50px
+		+r(768)
+			margin: 20px 0
+
+	&__text
+		font-size: 18px
+		+med
+
+	.navigation
+		+r(992)
+			margin-top: 50px
+
+.users
+	margin-top: 50px
+	display: grid
+	grid-template-columns: repeat(4,1fr)
+	grid-column-gap: 20px
+	grid-row-gap: 20px
+	-webkit-box-align: stretch
+	-ms-flex-align: stretch
+	align-items: stretch
+	+r(992)
+		grid-template-columns: repeat(2,1fr)
+		grid-column-gap: 10px
+		grid-row-gap: 10px
+
+.user
+	position: relative
+	&:last-child
+		margin-right: 0
+	&:hover
+		.user-edit, .user-delete
+			-webkit-transition: opacity .3s, transform .3s
+			-o-transition: opacity .3s, transform .3s
+			transition: opacity .3s, transform .3s
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+
+	&-pic
+		position: relative
+		background-color: #ddd
+		width: 250px
+		height: 250px
+		+rmin(1440)
+			width: 300px
+			height: 300px
+		+r(768)
+			width: 100%
+			height: 200px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&-edit
+		position: absolute
+		top: 15px
+		right: 15px
+		opacity: 0
+		visibility: hidden
+		transform: translateY(10px)
+		-webkit-transition: opacity .3s, transform .3s
+		-o-transition: opacity .3s, transform .3s
+		transition: opacity .3s, transform .3s
+		+r(992)
+			top: 10px
+			right: 10px
+			-webkit-transition: opacity .3s, transform .3s
+			-o-transition: opacity .3s, transform .3s
+			transition: opacity .3s, transform .3s
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			img
+				width: 40px
+
+	&-delete
+		position: absolute
+		top: 80px
+		right: 15px
+		opacity: 0
+		visibility: hidden
+		transform: translateY(10px)
+		-webkit-transition: opacity .3s, transform .3s
+		-o-transition: opacity .3s, transform .3s
+		transition: opacity .3s, transform .3s
+		width: 55px
+		height: 55px
+		border-radius: 50%
+		display: block
+		background-color: $red
+		display: flex
+		align-items: center
+		justify-content: center
+		svg
+			width: 15px
+			height: 15px
+			fill: $w
+		+r(992)
+			width: 40px
+			height: 40px
+			top: 70px
+			right: 10px
+			-webkit-transition: opacity .3s, transform .3s
+			-o-transition: opacity .3s, transform .3s
+			transition: opacity .3s, transform .3s
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			svg
+				width: 30px
+
+	&-star
+		position: absolute
+		bottom: 15px
+		left: 15px
+		+r(992)
+			img
+				width: 30px
+
+	&-name
+		font-size: 30px
+		+med
+		text-align: left
+		margin-top: 15px
+		text-transform: uppercase
+		+r(1440)
+			font-size: 26px
+			margin-top: 15px
+		+r(992)
+			font-size: 16px
+			margin-top: 15px
+		+r(768)
+			font-size: 14px
+
+	&-add-btn
+		cursor: pointer
+
+#usermodal,
+#usermodal_command,
+#usermodal_create
+	.modal
+		padding: 100px
+		+r(992)
+			padding: 40px !important
+
+.modal-form__title
+	font-size: 30px
+	margin-bottom: 30px
+	+bold
+
+.modal-form__sent
+	opacity: 0
+	visibility: hidden
+	transform: translateY(-30px)
+	transition: .2s ease
+	display: none
+	&.is-active
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		opacity: 1
+		visibility: visible
+		background-color: $w
+		width: 100%
+		height: 100%
+		z-index: 2
+		transform: translateY(0)
+	img
+		width: 120px
+
+.modal-form__inner
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	width: 100%
+	height: 100%
+
+#usermodal
+	transform: scale(0.8)
+	+r(992)
+		width: 100%
+
+.popup_visible #usermodal
+	transform: scale(1)
+
+.modal
+	background-color: $w
+	padding: 50px
+	+r(992)
+		padding: 30px
+		width: 100%
+
+	&-close
+		position: absolute
+		top: 50px
+		right: 50px
+		z-index: 3
+		+r(992)
+			top: 30px
+			right: 30px
+
+	.form__upload--button
+		background-color: #f5f5f5
+		padding: 10px
+
+.content__slider
+	padding: 100px 0
+	+r(1200)
+		padding: 50px 0
+	+r(992)
+		padding: 0
+
+	.slick-slide
+		margin: 0 25px
+
+.tabs
+	display: flex
+	justify-content: center
+
+.tab_container
+	margin-top: 50px
+
+.tabs li.is-active a
+	background-color: $red
+	color: $w
+
+.tabs li a
+	display: block
+	font-size: 20px
+	+bold
+	color: $blck
+	width: 155px
+	height: 50px
+	line-height: 45px
+	transform: skew(-15deg)
+	border: 3px solid $blck
+	text-transform: uppercase
+	text-align: center
+	+r(992)
+		font-size: 16px
+		width: 120px
+	&:last-child
+		margin-left: -3px
+	span
+		transform: skew(15deg)
+
+.cabinet__task
+	margin-bottom: 80px
+	margin-top: 60px
+	+r(992)
+		margin: 40px 0
+
+	.container
+		display: grid
+		grid-template-columns: repeat(2,1fr)
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+		-webkit-box-align: stretch
+		-ms-flex-align: stretch
+		align-items: stretch
+		+r(992)
+			grid-template-columns: repeat(1,1fr)
+			grid-column-gap: 20px
+			grid-row-gap: 20px
+
+	.accordion-item
+		border-top: 3px solid $blck
+		border-bottom: 0
+		&:last-child
+			border-bottom: 3px solid $blck
+
+	.accordion .acc-btn
+		padding: 25px 0
+		display: flex
+		align-items: center
+		+med
+
+	.accordion .acc-btn .icon
+		top: 50%
+		transform: translateY(-50%)
+
+	.accordion .acc-btn .icon::after
+		top: 0
+		left: 12px
+		width: 1px
+
+	.accordion .acc-btn .icon::before
+		top: 13px
+		left: -3px
+		height: 1px
+
+	.accordion .accordion-item .acc-btn[aria-expanded='true']
+		border: none
+
+	.accordion .acc-btn[aria-expanded='true']
+		color: $blck
+
+	.accordion-title
+		+med
+		margin-right: 150px
+		+r(1200)
+			margin-right: 100px
+		+r(992)
+			margin-right: 50px
+			font-size: 16px
+
+	.accordion .accordion-content p
+		margin-top: 0
+		+r(992)
+			line-height: 1.5
+
+	.accordion .acc-btn[aria-expanded='true'] .icon
+		transform: translateY(-50%) rotate(45deg)
+
+	.accordion .acc-btn[aria-expanded='true'] + .accordion-content
+		max-height: unset
+
+	.task-lock
+		img
+			padding: 25px 0
+			margin: 0 auto
+
+.cabinet__group
+	.column-1
+		flex-basis: 10%
+		max-width: 10%
+	.column-2
+		flex-basis: 70%
+		max-width: 70%
+	.column-3
+		flex-basis: 20%
+		max-width: 20%
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		+r(768)
+			text-align: left
+		img
+			margin-right: 20px
+			+r(768)
+				margin-right: 5px
+				max-width: 15px
+		div
+			+bold
+			font-size: 24px
+			+r(768)
+				font-size: 18px 
+			
+
+.task__column
+	background-color: #eee
+	position: relative
+	overflow: hidden
+	&--title
+		text-transform: uppercase
+		+bold
+		font-size: 24px
+		padding: 0 0 40px 0
+		+r(992)
+			font-size: 18px
+			padding: 0 0 20px
+	.task__column-color
+		color: #ffffff
+	.column-color
+		color: #E30613
+	.rating__th
+		background-color: $blck
+	.rating__td
+		border-bottom: 2px solid #000000
+		padding: 25px 20px
+		margin: 0 30px
+		+r(768)
+			padding: 15px 0
+			margin: 0 15px
+	.rating__td:last-child
+		border-bottom: 0
+	.rating__team img
+		max-width: 50px
+		+r(768)
+			max-width: 30px
+.rating__team .task__column--title
+	padding: 0 0 0 25px
+	text-align: left
+	+r(768)
+		font-size: 14px
+.task__group
+	padding: 40px 40px 0 40px
+tbody.task__group
+	padding: 0
+.tasks
+	padding: 40px
+	+r(992)
+		padding: 20px
+
+	.accordion-ball
+		+r(992)
+			font-size: 12px
+
+	&__answer
+		padding: 20px
+		background-color: $w
+		margin: 30px 0
+		hr
+			width: 100%
+			height: 2px
+			background-color: $blck
+			display: block
+			margin: 15px 0
+		&--title
+			font-size: 22px
+			+bold
+			text-transform: uppercase
+			+r(992)
+				font-size: 16px
+		&--subtitle
+			+med
+			text-transform: uppercase
+			+r(992)
+				font-size: 14px
+
+	&__answers
+		margin-top: 20px
+		margin-bottom: 20px
+
+.enemy
+
+	.task__column--title
+		padding: 40px 0 40px 40px
+		+r(992)
+			padding: 20px 0 20px 20px
+	.countdown
+		width: 100%
+		background-color: $w
+		padding: 40px
+		+r(992)
+			max-width: 100%
+			padding: 20px
+	.countdown__block
+		align-items: center
+	.countdown__title
+		margin-bottom: 15px
+		+med
+	.countdown__group
+		display: flex
+		align-items: center
+		margin-right: 10px
+		+r(992)
+			margin-right: 5px
+	.countdown__num
+		margin-right: 5px
+	.countdown__group,
+	.countdown__num,
+	.countdown__divider,
+		font-size: 16px
+		+bold
+		color: $red
+		+r(992)
+			font-size: 12px
+	.countdown__divider
+		+reg
+	.countdown__text
+		font-size: 12px
+		color: $red
+		margin-top: 0
+		+med
+	&-block
+		padding: 40px 40px 15px 40px
+		display: flex
+		justify-content: space-between
+		position: relative
+		+r(992)
+			flex-direction: column
+		& > img
+			max-width: 50px
+			position: absolute
+			top: 40px
+	&-text
+		padding-left: 70px
+	&-name
+		font-size: 28px
+		text-transform: uppercase
+		+bold
+		margin-bottom: 10px
+		+r(992)
+			margin-bottom: 30px
+			margin-left: 60px
+			font-size: 24px
+	&-deviz
+		font-size: 14px
+		+r(992)
+			margin-bottom: 15px
+	&-ball
+		display: flex
+		img
+			width: 30px
+			height: 30px
+			margin-right: 10px
+		&-text
+			+bold
+			font-size: 20px
+
+.enemy-users
+	display: grid
+	grid-template-columns: repeat(4,1fr)
+	grid-column-gap: 20px
+	grid-row-gap: 20px
+	padding: 20px
+	+r(992)
+		grid-template-columns: repeat(2,1fr)
+		grid-column-gap: 15px
+		grid-row-gap: 15px
+		padding: 15px
+
+.slider__photo
+	cursor: grab
+
+.slider__video video:hover
+	cursor: default !important
+
+.slider__video,
+.slider__photo
+	.swiper-slide
+		height: 400px
+		img
+			height: 400px
+			width: 100%
+			object-fit: cover
+			object-position: center
+		+r(992)
+			width: 300px !important
+
+.notifications
+	position: relative
+	width: 500px
+	height: 100%
+	display: block
+	position: fixed
+	top: 0
+	right: 0
+	background-color: $w
+	z-index: 150
+	transform: translateX(500px)
+	-webkit-transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear .25s
+	transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear .25s
+	will-change: visibility
+	visibility: hidden
+	+r(992)
+		width: 100%
+		transform: translateX(100%)
+	&.is-active
+		transform: translateX(0)
+		visibility: visible
+		-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, .28)
+		box-shadow: 0 0 16px rgba(0, 0, 0, .28)
+		-webkit-transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear 0s
+		transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear 0s
+
+	&__top
+		display: flex
+		justify-content: space-between
+		margin-bottom: 40px
+		padding: 50px 25px 0
+		+r(992)
+			padding: 30px 15px 0
+
+		img
+			width: 30px
+			height: 30px
+			+r(992)
+				width: 20px
+				height: 20px
+
+	&__toptitle
+		font-size: 25px
+		+med
+		text-transform: uppercase
+		+r(992)
+			font-size: 18px
+
+	&__content
+		position: relative
+		overflow-y: scroll
+		height: 100%
+		padding: 25px 25px 150px
+
+	&__item
+		background-color: #eee
+		padding: 25px
+		margin-bottom: 25px
+
+	&__date
+		text-align: right
+		+med
+		margin-bottom: 20px
+
+	&__title
+		font-size: 18px
+		+bold
+
+	&__text
+		font-size: 14px
+		margin: 20px 0
+
+		p
+			margin-bottom: 20px
+
+.slider__video
+	.swiper-slide
+		+r(992)
+			padding-right: 20px
+	.plyr video
+		height: 450px
+		+r(992)
+			height: 300px
+		+r(768)
+			height: 200px
+
+.tasks__videos
+	margin-top: 30px
+	.plyr video
+		height: 300px
+
+.mt20
+	background-color: $w !important
+	margin-top: -20px !important
+
+#answerform textarea
+	height: 150px
+	margin-top: 20px
+	transform: skew(0)
+	padding: 15px
+	line-height: unset
+	+placeholder
+		transform: skew(0)
+		text-indent: 5px
+		padding: 5px
+
+.form__answer
+	margin-top: 50px
+	background-color: $w
+	position: relative
+	display: block
+
+.fileuploader-items .fileuploader-item .column-title div
+	max-width: 200px
+
+#usermodal_create
+	+r(768)
+		width: 100%
+
+#usermodal_command
+	.modal
+		padding: 70px
+
+.user
+	&__lock
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background-color: rgba($blck, 1)
+		z-index: 3
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			width: 50px
+			filter: brightness(10)
+
+.help__btn
+	position: fixed
+	right: 20px
+	bottom: 110px
+	width: 80px
+	height: 80px
+	border-radius: 50%
+	background-color: $red
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	box-shadow: 0 0 0 rgba($red, 0.4)
+	animation: pulse 2s infinite
+	z-index: 10
+	+r(768)
+		width: 65px
+		height: 65px
+	svg
+		fill: $w
+		width: 40px
+		+r(768)
+			width: 25px
+
+@-webkit-keyframes pulse
+	0%
+	-webkit-box-shadow: 0 0 0 0 rgba($red, 0.4)
+	70%
+	-webkit-box-shadow: 0 0 0 30px rgba($red, 0)
+	100%
+	-webkit-box-shadow: 0 0 0 0 rgba($red, 0)
+
+@keyframes pulse
+	0%
+		-moz-box-shadow: 0 0 0 0 rgba($red, 0.4)
+		box-shadow: 0 0 0 0 rgba($red, 0.4)
+	70%
+		-moz-box-shadow: 0 0 0 30px rgba($red, 0)
+		box-shadow: 0 0 0 30px rgba($red, 0)
+	100%
+		-moz-box-shadow: 0 0 0 0 rgba($red, 0)
+		box-shadow: 0 0 0 0 rgba($red, 0)
+
+.help__modal
+	position: fixed
+	width: 700px
+	height: 100%
+	display: block
+	top: 0
+	right: 0
+	background-color: $w
+	z-index: 150
+	visibility: hidden
+	transform: translateX(700px)
+	-webkit-transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear .25s
+	transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear .25s
+	will-change: visibility
+	padding: 50px
+	overflow-y: scroll
+	+r(992)
+		width: 100%
+		padding: 30px
+		transform: translateX(100%)
+	&.is-active
+		transform: translateX(0)
+		visibility: visible
+		-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, .28)
+		box-shadow: 0 0 16px rgba(0, 0, 0, .28)
+		-webkit-transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear 0s
+		transition: transform .25s cubic-bezier(0.4, 0.0, 0.2, 1), visibility 0s linear 0s
+
+	.lines
+		border-left: 1px solid #ffaa9f
+		border-right: 1px solid #ffaa9f
+		width: 2px
+		float: left
+		height: 100%
+
+.help__list li
+	display: flex
+	list-style: none
+	border-bottom: 1px dotted #ccc
+	text-indent: 25px
+	height: auto
+	padding: 10px
+	+r(992)
+		text-indent: 10px
+	span
+		+bold
+	&:hover
+		background-color: #f0f0f0
+		-webkit-transition: all 0.2s
+		-moz-transition: all 0.2s
+		-ms-transition: all 0.2s
+		-o-transition: all 0.2s
+
+.help__close
+	position: absolute
+	top: 30px
+	right: 30px
+
+.help__title
+	+bold
+	font-size: 26px
+	margin-bottom: 30px
+	+r(768)
+		margin-top: 30px
+
+.under-moderation
+	width: 100%
+	height: 100%
+	background: rgba($red,.8)
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	color: $w
+	+bold
+	text-transform: uppercase
+
+.dontnext
+	padding: 25px 20px
+	font-size: 16px
+	+med
+	text-align: center
+	text-transform: uppercase
+	background-color: $red
+	color: $w

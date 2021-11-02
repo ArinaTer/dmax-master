@@ -1,0 +1,538 @@
+// HERO
+.hero
+	width: 100%
+	background-color: $w
+	padding: 150px 0 120px
+	background: url(../img/hero-right.png) no-repeat center right -100px
+	background-size: contain
+	position: relative
+	+r(1200)
+		background: none 
+		padding-top: 0
+		padding-bottom: 70px
+	&__tab
+		position: relative
+		display: none
+		+r(1200)
+			display: block
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			z-index: 3
+			background-color: rgba(0,0,0,.4)
+
+	&__tablet
+		display: none
+		+r(1200)
+			display: block
+			width: 100%
+			object-fit: cover
+			object-position: right
+			height: 400px
+
+	.container
+		padding: 0 20px
+		+r(1200)
+			max-width: fit-content
+			width: 100%
+
+	&__title
+		display: inline-block
+		font-size: 50px
+		+bold
+		color: $blck
+		position: relative
+		text-transform: uppercase
+		opacity: 0
+		transform: translateY(100px)
+		+r(1200)
+			font-size: 36px
+			padding-top: 60px
+		+r(992)
+			font-size: 32px
+		+r(768)
+			font-size: 26px
+		div
+			display: table
+			position: relative
+			&:first-child
+				color: $red
+			+r(992)
+				br
+					display: none
+		&:hover .hero__title--link div::before 
+			width: 100%
+			transition: width 0.5s cubic-bezier(0.23, 1.08, 0.62, 0.95)
+
+		&--link
+			position: relative
+			&::before
+				content: ''
+				display: block
+				width: 0
+				height: 1px
+				background-color: $blck
+				position: absolute
+				bottom: 0
+				left: 0
+				transition: width 0.5s cubic-bezier(0.23, 1.08, 0.62, 0.95)
+
+	&__video
+		display: block
+		position: relative
+		margin-top: 50px
+		max-width: 100%
+		// opacity: 0
+		// transform: translateY(100px)
+
+	.herocount
+		margin: 50px 0
+		opacity: 0
+		transform: translateY(100px)
+		+r(1200)
+			margin: 20px 0
+
+		&__title
+			font-size: 14px
+			+bold
+			text-transform: uppercase
+			margin-bottom: 20px
+			+r(1200)
+				margin-bottom: 10px
+				font-size: 12px
+
+	.countdown__num,
+	.countdown__divider
+		color: $red
+		+r(1200)
+			font-size: 24px
+	
+	.countdown__text
+		color: $blck
+		+med
+		font-size: 10px
+
+	&__active
+		display: flex
+		opacity: 0
+		transform: translateY(100px)
+		+r(1200)
+			flex-direction: column
+
+		.btn-red
+			margin-right: 20px
+			+r(1200)
+				margin-right: 0
+				margin-bottom: 20px
+				margin-top: 20px
+
+	.btn-link
+		position: absolute
+		height: 57px
+		bottom: 120px
+		right: 50px
+		border: 0
+		display: flex
+		align-items: center
+		text-transform: uppercase
+		color: $w
+		+bold
+		font-size: 14px
+		opacity: 0
+		transform: translateY(100px)
+		transition: color cubic-bezier(0.73, 0.29, 0, 1)
+		z-index: 3
+		&:hover
+			.btn-link__border
+				transform: scale(1.15)
+		+r(1200)
+			top: 270px
+			bottom: auto
+			right: 0
+		+r(768)
+			justify-content: flex-end 
+			padding: 0 10px
+
+		&__text
+
+		&__circle
+			width: 57px
+			height: 57px
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			background-color: transparent
+			margin: 0 20px
+			+r(1200)
+				margin-left: 20px
+				width: 40px
+				height: 40px
+
+		&__border
+			border: 2px solid $w
+			border-radius: 50%
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			transition: transform 0.5s cubic-bezier(0.73, 0.29, 0, 1)
+
+		img
+			max-width: 120px
+			+r(1200)
+				position: absolute
+				top: calc(100% + 15px)
+				right: 20px
+
+.loader-gone .hero__title,
+.loader-gone .herocount,
+// .loader-gone .hero__video,
+.loader-gone .btn-link
+	animation: fadeInUp 0.6s ease
+	animation-delay: 1.3s
+	animation-fill-mode: forwards
+
+.loader-gone .herocount
+	animation-delay: 1.4s
+
+// .loader-gone .hero__video
+// 	animation-delay: 1.5s
+
+// about
+.about
+	padding: 80px 0 100px
+	background-color: $blck
+
+	.subtitle
+		margin-bottom: 50px
+
+	&__title
+		font-size: 32px
+		color: $w
+		+bold
+		+r(992)
+			margin-top: 20px
+
+	&__text
+		margin: 0 0 60px
+		color: $w
+		+r(992)
+			margin-top: 30px
+
+	&__block
+		display: flex
+		+r(992)
+			flex-direction: column
+
+	&__bottom
+		margin-top: 150px
+		+r(992)
+			margin-top: 50px
+
+		.about__left
+			margin-right: 0
+			margin-left: 50px
+			+r(992)
+				margin-left: 0
+
+	&__left
+		max-width: 60%
+		flex-basis: 60%
+		margin-right: 50px
+		position: relative
+		+r(992)
+			max-width: 100%
+			flex-basis: 100%
+			margin-right: 0
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+	&__right
+		max-width: 40%
+		flex-basis: 40%
+		+r(992)
+			max-width: 100%
+			flex-basis: 100%
+
+		img
+			width: 100%
+
+	ul
+		margin-top: 30px !important
+		li
+			display: flex
+			border-top: 2px solid $w
+			padding: 15px 0 30px
+			color: $w
+		a
+			color: $w
+			+bold
+			text-decoration: underline
+		
+		.about__list--num
+			+bold
+			display: inline-block
+			margin-right: 50px
+
+.oferta .about__list--text
+	display: flex
+	a
+		text-decoration: underline !important
+
+// mexanika
+.mexanika
+	padding: 80px 0 70px
+	+r(992)
+		padding: 60px 0 50px
+
+.mex
+	position: relative
+	&__img
+		margin-top: 50px
+		margin-bottom: 30px
+		width: 100%
+		+r(992)
+			display: none
+	&__list
+		display: flex
+		position: relative
+		margin-top: 80px
+		flex-direction: column
+
+	&__item
+		display: flex
+		margin-bottom: 50px
+		justify-content: space-between
+		border-top: 3px solid #1B1C22
+		padding-top: 20px
+		+r(576)
+			flex-direction: column
+
+	&__left
+		display: flex
+		flex-basis: 30%
+		max-width: 30%
+		+r(576)
+			flex-basis: 100%
+			max-width: 100%
+
+	&__right
+		display: flex
+		flex-basis: 25%
+		max-width: 25%
+		+r(576)
+			flex-basis: 100%
+			max-width: 100%
+			margin: 20px 0
+
+	&__num
+		font-size: 105px
+		line-height: 100px
+		+bold
+		+r(992)
+			font-size: 100px
+		+r(576)
+			font-size: 90px
+
+	&__subtext
+		font-size: 25px
+		+bold
+		+r(992)
+			// font-size: 20px
+			// position: absolute
+			// top: 15px
+			// left: 85px
+
+	&__date
+		font-size: 20px
+		color: $red
+		+med
+
+	&__texts
+		font-size: 16px
+		+med
+		flex-basis: 45%
+		max-width: 45%
+		+r(576)
+			flex-basis: 100%
+			max-width: 100%
+
+// Create Logo
+.createlogo
+	background-color: $red
+	padding: 80px 0 150px
+	+r(992)
+		padding: 50px 0 100px
+
+	&__block
+		margin-top: 130px
+		display: flex
+		justify-content: space-between
+		+r(992)
+			flex-direction: column
+			margin-top: 80px
+
+	&__left
+		max-width: 40%
+		flex-basis: 40%
+		+r(992)
+			order: 2
+			max-width: 100%
+			flex-basis: 100%
+
+	&__right
+		max-width: 50%
+		flex-basis: 50%
+		display: flex
+		align-items: center
+		+r(992)
+			order: 1
+			max-width: 100%
+			flex-basis: 100%
+			margin-bottom: 50px
+			justify-content: space-evenly
+		.big
+			margin: 0 30px
+			+r(992)
+				max-width: 150px
+
+	p
+		margin: 30px 0 50px
+		color: $w
+		text-transform: uppercase
+		line-height: 1.5
+
+	.swiper-slide
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: all 200ms linear
+		transform: scale(0.5)
+		&.swiper-slide-active
+			transform: scale(1)
+  
+// Instructor
+.instruction
+	&__content
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 80px 30px
+		+r(992)
+			padding: 50px 20px
+			display: block
+
+	img
+		width: 100%
+
+	&-img-lg
+		+r(992)
+			display: none
+	&-img-xs
+		display: none
+		+r(992)
+			display: block
+
+	.title
+		+r(992)
+			margin-top: 20px
+
+	.btn-play
+		position: absolute
+		right: 50px
+		bottom: 50px
+		+r(992)
+			right: 20px
+			width: 90px
+			height: 90px
+			line-height: 85px
+			font-size: 12px
+
+// Are your
+.youready
+	background-color: $blck
+	padding: 100px 0
+	background: $blck url(../img/are-you-ready.jpg) center no-repeat
+	background-size: cover
+
+	.container
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__title
+		color: $w
+		text-align: center
+		margin-bottom: 50px
+
+	.countdown
+		margin-bottom: 50px
+
+		&__text
+			color: $w
+
+	.inview-fade-in-up-element
+		width: 100%
+		display: flex
+		justify-content: center
+
+// FAQ
+.faq
+	padding: 80px 0 150px
+
+	.subtitle
+		margin-bottom: 80px
+
+	.title
+		margin-bottom: 40px
+
+	.accordion-title
+		+med
+		padding: 30px 0
+		font-size: 25px
+		+r(992)
+			display: block
+			font-size: 18px
+			max-width: 80%
+			padding: 0
+
+	a
+		color: $red
+
+
+.to_top
+	position: fixed
+	bottom: 20%
+	transform: translateY(0)
+	right: 50px
+	width: 70px
+	height: 70px
+	padding-top: 10px
+	background-color: $w
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: 12px
+	color: $w
+	+bold
+	+r(768)
+		right: 5px
